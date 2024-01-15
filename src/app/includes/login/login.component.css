@@ -1,0 +1,17 @@
+.container
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+}
+
+input,button{
+      margin-top: 20px;
+    height: 40px;
+}

@@ -1,0 +1,21 @@
+<p>app-menu works!</p>
+<div class="ps-3">
+        <h1 class="text-danger" >{{role}}</h1>
+
+        
+        
+        <div *ngFor="let menu of menus[0][role]">
+
+                <button class="btn btn-warning mt-2" [routerLink]="[role,menu.path]">{{menu.label}}</button>
+                
+         </div>
+
+</div> 
+
+
+
+
+
+
+
+
