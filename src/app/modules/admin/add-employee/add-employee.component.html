@@ -1,1 +1,38 @@
 <p>add-employee works!</p>
+
+
+<h1> Registration DATA</h1>
+<table border="2">
+ <th>Enquiry ID</th>
+ <th>Enquiry Name</th>
+ <th>Enquiry setpassword </th>
+ <th>Enquiry fullname</th>
+ <th>Enquiry gender </th>
+ <th>Enquiry dateofbirth</th>
+ <th>Enquiry contactno</th>
+ <th>Enquiry address/th>
+ <th>Enquiry pincode/th>
+ <th>Enquiry contactno</th>
+ <th>Enquiry employementdetails</th>
+ <th>Action</th>
+
+ <tr *ngFor="let userr of user">
+    <td> {{userr.id}}</td>
+    <td> {{userr.username}}</td>
+    <td> {{userr.setpassword}}</td>
+    <td> {{userr.fullname}}</td>
+    <td> {{userr.gender}}</td>
+    <td> {{userr.dateofbirth}}</td>
+    <td> {{userr.contactno}}</td>
+    <td> {{userr.address}}</td>
+    <td> {{userr.pincode}}</td>
+    <td> {{userr.contactno}}</td>
+    <td> {{userr.employementdetails}}</td>
+
+
+    <!-- <input type="button" (click)="updateData(userr)" value="UPDATE"> -->
+
+    <input type="button" (click)="delete(userr)" value="DELETE">
+
+   </tr>  
+  </table>

@@ -7,6 +7,7 @@ import { Premimumcalculation } from "./premimumcalculation";
 import { UploaduserDocuments } from "./uploaduser-documents";
 
 export class User {
+    id:number;
     username:string;
     setpassword:string;
     fullname:string;

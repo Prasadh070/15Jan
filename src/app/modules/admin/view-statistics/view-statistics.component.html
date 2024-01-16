@@ -1,1 +1,21 @@
 <p>view-statistics works!</p>
+
+
+<h1> Enquiry  DATA</h1>
+<table border="2">
+ <th>Enquiry ID</th>
+ <th>Enquiry Name</th>
+ <th>Enquiry Contact NO</th>
+ <th>Enquiry Email ID</th>
+ <th>Action</th>
+
+ <tr *ngFor="let eq of enquiry">
+    <td> {{eq.e_id}}</td>
+    <td>{{eq.e_name}}</td>
+    <td>{{eq.e_contactNo}}</td>
+    <td>{{eq.e_email}}</td>
+
+   </tr>  
+  </table>
+
+

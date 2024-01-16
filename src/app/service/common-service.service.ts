@@ -2,6 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EnquiryForm } from '../model/enquiry-form';
 import { User } from '../model/user';
+import { Additionalinformation } from '../model/additionalinformation';
+import { Dependentinformation } from '../model/dependentinformation';
+import { Employementdetails } from '../model/employementdetails';
+import { Healthinformation } from '../model/healthinformation';
+import { Insuranceplandetails } from '../model/insuranceplandetails';
+import { Premimumcalculation } from '../model/premimumcalculation';
+import { UploaduserDocuments } from '../model/uploaduser-documents';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +17,28 @@ export class CommonServiceService {
 
   constructor(private http:HttpClient) { }
 
+
+  // u:User={
+
+  //   id:0,
+  //   username:'',
+  //   setpassword:'',
+  //   fullname:'',
+  //   gender:'',
+  //   //dateofbirth:Date,
+  //   contactno:0,
+  //   address:'',
+  //   pincode:0,
+    
+  //   employementdetails: {
+  //     employementstatus: '',
+  //     occupation: '',
+  //     workingAddress: '',
+
+  //   }
+
+
+    
 
   saveData(enquiry: EnquiryForm)
   {
@@ -22,4 +51,19 @@ export class CommonServiceService {
 {
   return this.http.post('http://localhost:8767/health/saveUserdata',user)
 }
+
+ getEnquiry()
+ {
+  return this.http.get('http://localhost:8767/health/getEdata')
+ }
+
+ getUser()
+ {
+  return this.http.get('http://localhost:8767/health/getuserdata')
+ }
+
+ deleteRegister(user : User)
+ {
+  return this.http.delete('http://localhost:8767/health/deleteuser/'+user.id);
+ }
 }

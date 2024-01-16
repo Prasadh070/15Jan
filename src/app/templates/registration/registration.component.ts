@@ -12,100 +12,85 @@ export class RegistrationComponent implements OnInit {
 
   step:any=1;
   userReg: FormGroup;
-  employementdetails:FormGroup;
-  insuranceplandetails:FormGroup;
-  healthinformation:FormGroup;
-  dependentinformation:FormGroup;
- additionalinformation:FormGroup;
+//   employementdetails:FormGroup;
+//   insuranceplandetails:FormGroup;
+//   healthinformation:FormGroup;
+//   dependentinformation:FormGroup;
+//  additionalinformation:FormGroup;
+
 
   constructor(private fb:FormBuilder,private router:Router , private s :CommonServiceService) { }
 ngOnInit(): void {
 
    this.userReg=this.fb.group({
-            loginDetails:this.fb.group({
-            username: this.fb.control(""),
-            setpassword:this.fb.control("")
-          }) ,
-          personDetails:this.fb.group({
-            fullname: this.fb.control(""),
-            gender:this.fb.control(""),
-            dateofbirth:this.fb.control("")
-        }) ,
-          contactDetails:this.fb.group({
-          contactno:this.fb.control(""),
-          address:this.fb.control(""),
-          pincode:this.fb.control("")
-       })  ,
-          employementdetails:this.fb.group({
-          employementstatus:this.fb.control(""),
-          occupation:this.fb.control(""),
-          workingAddress:this.fb.control("")
-       })  ,
+            
+          username: [],
+          setpassword:[],
+            fullname:[],
+            gender:[],
+            dateofbirth:[],
+            contactno:[],
+            address:[],
+            pincode:[] ,
+
+         employementdetails:this.fb.group({
+          employementstatus:[],
+          occupation:[],
+          workingAddress:[] ,
+        })  ,
           healthinformation:this.fb.group({
-          primarycarePhysician:this.fb.control(""),
-          preExistingmedicalCondition:this.fb.control(""),
-          currentMedication:this.fb.control("")
+            primarycarePhysician:[],
+            preExistingmedicalCondition:[],
+            currentMedication:[]
+       
       })  ,
-            dependentinformation:this.fb.group({
-            nameofDependent:this.fb.control(""),
-            reletionwithdependent:this.fb.control(""),
-            birthdate:this.fb.control(""),
-            age:this.fb.control("")
-        })  ,
-          insuranceplanDetails:this.fb.group({
-          coverageType:this.fb.control(""),
-          coverageStartdate:this.fb.control(""),        
-        })  ,
          
-        premiumcalculation:this.fb.group({
+            dependentinformation:this.fb.group({
+            nameofDependent:[],
+            reletionwithdependent:[],
+            birthdate:[],
+            age:[],
+          })  ,
+            insuranceplanDetails:this.fb.group({
+            coverageType:[],
+            coverageStartdate:[],   
+          })  
+             ,
+  
+          premiumcalculation:this.fb.group({
           age:this.fb.control(""),
           gender:this.fb.control(""),
           coverageType:this.fb.control(""),         
-        })  ,
-        uploaduserDocuments:this.fb.group({
-          // id:this.fb.control(""),
-       
-          panCard:this.fb.control(""),        
-          adharCard:this.fb.control(""),
-          photo:this.fb.control(""),
-          verificationStatus:this.fb.control(""),
-
-        })  ,
-        
-            additionalinformation:this.fb.group({
-            preferedmethodforcommunication:this.fb.control(""),
-            howhereabout:this.fb.control(""),
+          }),
       
-     })  
-
-  }) 
+           additionalinformation:this.fb.group({
+           preferedmethodforcommunication:this.fb.control(""),
+           howhereabout:this.fb.control("")                  
+           })            
+          })  
+          
 }
+     
+          onSubmit() {
+          //  this.step=this.step+1;
+            // if(this.step==8){
+            //   // this.router.navigate([\thankyou] );
+            // }
+                console.log(this.userReg.value)
+                this.s.saveRegistration(this.userReg.value).subscribe();
+                // window.location.reload();
 
+                alert("User Registered Successfully...!")
 
-
-  onSubmit()
-  {
-      this.step=this.step+1;
-      // if(this.step==8){
-      //   // this.router.navigate([\thankyou] );
-      // }
-       console.log(this.userReg.value)
-           this.s.saveRegistration(this.userReg.value).subscribe();
-           alert("User Registered Successfully...!")
-           
-
-
-  }    
-
-  previous()
-  {
-      this.step=this.step-1;
-  }
- 
-next()
-{
-  this.step=this.step+1;
-}
+          }
+           previous() {
+          this.step=this.step-1;
+          }
+          next() {
+            
+            this.step=this.step+1;
+          }
+         
 
 
 }
