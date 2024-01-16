@@ -3,8 +3,7 @@ import { Dependentinformation } from "./dependentinformation";
 import { Employementdetails } from "./employementdetails";
 import { Healthinformation } from "./healthinformation";
 import { Insuranceplandetails } from "./insuranceplandetails";
-import { Premimumcalculation } from "./premimumcalculation";
-import { UploaduserDocuments } from "./uploaduser-documents";
+
 
 export class User {
     id:number;
@@ -17,12 +16,10 @@ export class User {
     address:string;
     pincode:number;
     
-    employementdetails: Employementdetails;
-    healthinformation:Healthinformation;
-    dependentinformation:Dependentinformation;
-    Insuranceplandetails:Insuranceplandetails;
-    premiumcalculation:Premimumcalculation;
-    uploaduserDocuments:UploaduserDocuments;
-    additionalinformation:Additionalinformation;
+    ed: Employementdetails;
+    hi:Healthinformation;
+    depedentinfomation:Dependentinformation;
+    ipd:Insuranceplandetails;
+    addi:Additionalinformation;
 
 }

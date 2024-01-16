@@ -33,37 +33,33 @@ ngOnInit(): void {
             address:[],
             pincode:[] ,
 
-         employementdetails:this.fb.group({
+         ed:this.fb.group({
           employementstatus:[],
           occupation:[],
           workingAddress:[] ,
         })  ,
-          healthinformation:this.fb.group({
+          hi:this.fb.group({
             primarycarePhysician:[],
             preExistingmedicalCondition:[],
             currentMedication:[]
        
       })  ,
          
-            dependentinformation:this.fb.group({
+      depedentinfomation:this.fb.group({
             nameofDependent:[],
             reletionwithdependent:[],
             birthdate:[],
             age:[],
           })  ,
-            insuranceplanDetails:this.fb.group({
+            ipd:this.fb.group({
             coverageType:[],
             coverageStartdate:[],   
           })  
              ,
   
-          premiumcalculation:this.fb.group({
-          age:this.fb.control(""),
-          gender:this.fb.control(""),
-          coverageType:this.fb.control(""),         
-          }),
+          
       
-           additionalinformation:this.fb.group({
+           addi:this.fb.group({
            preferedmethodforcommunication:this.fb.control(""),
            howhereabout:this.fb.control("")                  
            })            
