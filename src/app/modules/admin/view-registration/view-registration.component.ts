@@ -1,27 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { CommonServiceService } from 'src/app/service/common-service.service';
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  selector: 'app-view-registration',
+  templateUrl: './view-registration.component.html',
+  styleUrls: ['./view-registration.component.css']
 })
-export class RegistrationComponent implements OnInit {
-
-  step:any=1;
-  userReg: FormGroup;
-//   employementdetails:FormGroup;
-//   insuranceplandetails:FormGroup;
-//   healthinformation:FormGroup;
-//   dependentinformation:FormGroup;
-//  additionalinformation:FormGroup;
+export class ViewRegistrationComponent implements OnInit {
 
 
   constructor(private fb:FormBuilder,private router:Router , private s :CommonServiceService, private activeRout:ActivatedRoute) { }
-ngOnInit(): void {
+
+  step:any=1;
+  userReg: FormGroup;
+
+  ngOnInit(): void {
 
    this.userReg=this.fb.group({
               id:[0],
@@ -74,22 +70,22 @@ ngOnInit(): void {
             if(this.userReg.controls['id'].value==0)
             {
 
-          //  this.step=this.step+1;
-            // if(this.step==8){
-            //   // this.router.navigate([\thankyou] );
-            // }
+          
                 console.log(this.userReg.value)
                 this.s.saveRegistration(this.userReg.value).subscribe();
-                // window.location.reload();
+               
 
-                alert("User Registered Successfully...!")
+              
             }
             else
             {
               this.s.updateRegister(this.userReg.value).subscribe();
               alert("update Register")
+              // this.router.navigate(['apnafinance/admin/add_emp'])
             }
-            this.userReg.reset();
+            // this.userReg.reset();
+            
+
 
           }
            previous() {
@@ -108,7 +104,7 @@ ngOnInit(): void {
 
                 let userjson:string=param.get('data')
                 let editDetails:User=JSON.parse(userjson);
-                console.log(editDetails);
+                console.log(editDetails)
                 this.userReg.patchValue(editDetails)
               }
             )

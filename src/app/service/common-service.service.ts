@@ -18,24 +18,22 @@ export class CommonServiceService {
   constructor(private http:HttpClient) { }
 
 
-  // u:User={
-
-  //   id:0,
-  //   username:'',
-  //   setpassword:'',
-  //   fullname:'',
-  //   gender:'',
-  //   //dateofbirth:Date,
-  //   contactno:0,
-  //   address:'',
-  //   pincode:0,
-    
-  //   employementdetails: {
-  //     employementstatus: '',
-  //     occupation: '',
-  //     workingAddress: '',
-
-  //   }
+// user:User={
+//   id: 0,
+//   username: '',
+//   setpassword: '',
+//   fullname: '',
+//   gender: '',
+//   dateofbirth: undefined,
+//   contactno: 0,
+//   address: '',
+//   pincode: 0,
+//   ed: new Employementdetails,
+//   hi: new Healthinformation,
+//   depedentinfomation: new Dependentinformation,
+//   ipd: new Insuranceplandetails,
+//   addi: new Additionalinformation
+// }
 
 
     
@@ -65,5 +63,11 @@ export class CommonServiceService {
  deleteRegister(user : User)
  {
   return this.http.delete('http://localhost:8767/health/deleteuser/'+user.id);
+ }
+
+
+ updateRegister(user:User)
+ {
+  return this.http.put('http://localhost:8767/health/update/'+user.id,user);
  }
 }

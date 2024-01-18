@@ -1,0 +1,228 @@
+<p>view-registration works!</p>
+<!-- <p>registration works!</p> -->
+<div class="container tb-10">
+    <h1 >New User Registration </h1>
+    
+              <form [formGroup]="userReg" (ngSubmit)="onSubmit()"> 
+                    <!-- ----------------Start------------------>
+ 
+                  <div *ngIf="step == 1">
+                                 <h4>User Login Details</h4>
+                              <div class="form-group">
+                                 <label for="uname">Enter Username</label>
+                              <input type="text" class="form-control" id="uname" formControlName="username" placeholder="username">
+                              </div>
+                              <div class="form-group">
+                                 <label for="upass">Enter Password</label>
+                                 <input type="text" class="form-control" id="upass" formControlName="setpassword" placeholder="setpassword">
+                              </div>
+ 
+                              <div class="form-group">
+                                 <label for="fname">Enter Complete Name</label>
+                                 <input type="text" class="form-control" id="fname" formControlName="fullname" placeholder="fullname">
+                              </div>
+                              
+                              <div class="form-group">
+                                 <label for="gender">Gender</label>
+                                 <select class="form-control" formControlName="gender">
+                                 <option value="null">Select Any One</option>
+                                 <option value="male">Male</option>
+                                 <option value="female">Female</option>
+                                 <option value="other">Other</option>
+                                 </select>
+                              </div>
+ 
+                              <div class="form-group">
+                              <label for="DOB">Enter Date of Birth</label>
+                              <input type="date" class="form-control" id="DOB" formControlName="dateofbirth" placeholder="dateofbirth">
+                          vv </div>
+ 
+                            <div class="form-group">
+                              <label for="contactno">Enter Contact no</label>
+                              <input type="number" class="form-control" id="contactno" formControlName="contactno" placeholder="contactno">
+                            </div>
+                           
+                            <div class="form-group">
+                              <label for="address">Enter Address</label>
+                              <input type="text" class="form-control" id="address" formControlName="address" placeholder="address">
+                           </div>
+            
+                           <div class="form-group">
+                           <label for="pincode">Enter Pincode</label>
+                           <input type="number" class="form-control" id="pincode" formControlName="pincode" placeholder="pincode">
+                           </div>
+            
+           </div>
+ 
+                  <!-- -----------------Step 1 End------------------>
+                 
+                 <!-- -----------------Step2 Start------------------>
+ 
+              <div *ngIf="step == 2" > 
+                           <div formGroupName="ed">
+                              <h4>Employement Details</h4>
+                              <!-- <div class="form-group">
+                                 <label for="employementstatus">Enter Employement Status </label>
+                                 <input type="text" class="form-control" id="employementstatus" formControlName="employementstatus" placeholder="employementstatus">
+                              </div> -->
+                              
+                              <div class="form-group">
+                                 <label for="occupation">Enter Occupation</label>
+                                 <input type="text" class="form-control" id="occupation" formControlName="occupation" placeholder="occupation">
+                              </div>
+               
+                              <div class="form-group">
+                              <label for="workingAddress">Enter Working Address</label>
+                              <input type="text" class="form-control" id="workingAddress" formControlName="workingAddress" placeholder="workingAddress">
+                              </div>
+                           </div>
+                                        <!-- -----------------MOdel:healthinformation  Start------------------>
+ 
+                           <div  formGroupName="hi"> 
+                           <h4>Health Information  Details</h4>
+                           <!-- <div class="form-group">
+                              <label for="primarycarePhysician">Enter primary care Physician </label>
+                              <input type="text" class="form-control" id="primarycarePhysician" formControlName="primarycarePhysician" placeholder="primary care Physician">
+                           </div> -->
+                           
+                           <div class="form-group">
+                              <label for="preExistingmedicalCondition">Enter preExisting Medical Condition </label>
+                              <input type="text" class="form-control" id="preExistingmedicalCondition" formControlName="preExistingmedicalCondition" placeholder="preExisting Medical Condition ">
+                           </div>
+               
+                           <div class="form-group">
+                           <label for="currentMedication">Enter current Medication </label>
+                           <input type="text" class="form-control" id="currentMedication" formControlName="currentMedication" placeholder="currentMedication">
+                           </div>
+                           
+                        </div> 
+            </div>                     <!-- -----------------Step 2 End------------------>
+ 
+                                 <!-- -----------------Step 3 Start------------------>
+                             <!-- -----------MOdel : dependentinformation Step -------------->
+ 
+            <div *ngIf="step == 3" > 
+                        <div formGroupName="depedentinfomation">
+                        <!-- <h4>Dependent Information </h4>
+                        <div class="form-group">
+                           <label for="nameofDependent">Enter Name of Dependent  </label>
+                           <input type="text" class="form-control" id="nameofDependent" formControlName="nameofDependent" placeholder="name of Dependent">
+                        </div> -->
+                     
+                        <div class="form-group">
+                           <label for="reletionwithdependent">Enter reletionwithdependent  </label>
+                           <input type="text" class="form-control" id="reletionwithdependent" formControlName="reletionwithdependent" placeholder="reletionwithdependent">
+                        </div>
+            
+                        <div class="form-group">
+                        <label for="birthdate">Enter Birth Date </label>
+                        <input type="date" class="form-control" id="birthdate" formControlName="birthdate" placeholder="birthdate">
+                        </div>
+                        
+                        <div class="form-group">
+                        <label for="age">Enter current Age</label>
+                        <input type="number" class="form-control" id="age" formControlName="age" placeholder="age">
+                        </div>                      
+                     </div>
+                                             
+               <!-- ---------------Model :insuranceplanDetails  Start-------------------->
+               <div  formGroupName="ipd"> 
+                  <h4> Insurance plan Details </h4>
+                  <!-- <div class="form-group">
+                     <label for="coverageType">Enter CoverageType </label>
+                     <input type="text" class="form-control" id="coverageType" formControlName="coverageType" placeholder="coverageType">
+               </div> -->
+                  
+                  <div class="form-group">
+                     <label for="coverageStartdate">Enter coverageStartdate </label>
+                     <input type="date" class="form-control" id="coverageStartdate" formControlName="coverageStartdate" placeholder="Coverage Startdate">
+                  </div>
+ 
+               </div> 
+ 
+       </div>                     <!-- -----------------Step 3 End------------------>
+                 
+                                     
+             <!-- -----------------Step 4 Start------------------>
+                          <!-- -----------------Model:premiumcalculation- Start------------------>
+ 
+            <div *ngIf="step == 4" > 
+                           <!-- <div formGroupName="premiumcalculation">
+                        <h4>Premium Calculation </h4>
+                        <div class="form-group">
+                           <label for="age">Enter your age </label>
+                           <input type="age" class="form-control" id="age" formControlName="age" placeholder=" age">
+                        </div>
+                        
+                        <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select class="form-control" formControlName="gender">
+                           <option value="null">Select Any One</option>
+                           <option value="male">Male</option>
+                           <option value="female">Female</option>
+                           <option value="other">Other</option>
+            
+                        </select>
+                     </div>
+                     </div> -->
+  
+             <!-- <div *ngIf="step == 9" formGroupName="uploaduserDocuments"> 
+              <h4>Upload User Documents </h4>
+             <div class="form-group">
+                <label for="id">Enter your id</label>
+                <input type="number" class="form-control" id="id" formControlName="id" placeholder="id">
+             </div>
+             
+             
+               
+             <div class="form-group">
+              <label for="panCard ">Upload your panCard</label>
+              <input type="file" class="form-control" id="panCard" formControlName="panCard" placeholder="panCard">
+           </div>
+           
+           <div class="form-group">
+            <label for="adharCard ">Upload your AdharCard </label>
+            <input type="file" class="form-control" id="adharCard" formControlName="adharCard" placeholder="adharCard">
+         </div>
+  
+         <div class="form-group">
+          <label for="coverageStartdate ">Upload your Photo </label>
+          <input type="file" class="form-control" id="photo" formControlName="photo" placeholder="photo">
+       </div>
+         
+         <div class="form-group">
+          <label for="verificationStatus ">Enter your verificationStatus</label>
+          <input type="text" class="form-control" id="verificationStatus" formControlName="verificationStatus" placeholder="verificationStatus">
+        </div>
+      </div> -->
+  
+                  <div formGroupName="addi"> 
+                  <h4> Additional Information </h4>
+                  <!-- <div class="form-group">
+                     <label for="preferedmethodforcommunication">Enter prefered method for communication </label>
+                     <input type="text" class="form-control" id="preferedmethodforcommunication" formControlName="preferedmethodforcommunication" placeholder="preferedmethodforcommunication">
+                  </div>
+                   -->
+                  <div class="form-group">
+                     <label for="howhereabout ">Enter Howhereabout </label>
+                     <input type="text" class="form-control" id="howhereabout" formControlName="howhereabout" placeholder="howhereabout">
+                  </div>
+      
+               </div>
+        </div>
+          
+              
+                 <pre></pre>
+                <div class="form-group">
+                    <a class="btn btn-primary mx-2" *ngIf="step!=1 && step!=5 " [hidden]="step==5" (click)="previous()" >Previous</a>
+                    <button type="submit" class="btn btn-primary mx-2" *ngIf="step!=4"[hidden]="step==5" (click)="next()">Next</button>
+                    <button type="submit" class="btn btn-primary mx-2" *ngIf="step==4" (click)="onSubmit()">Submit</button> 
+                </div>
+                    <!-- {{userReg.value|json}} -->
+              
+              </form>
+              
+              
+            </div>
+  
+ <!-- <router-outlet> </router-outlet> -->

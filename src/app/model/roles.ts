@@ -3,9 +3,9 @@ export class Roles {
         //0
         {
             admin:[
-                    {label:'View Statistics',path:'statistics'},
-                    {label:'Add Employee',path:'add_emp'},
-                    {label:'View Employee',path:'view_emp'},
+                    {label:'View Enquiry',path:'statistics'},
+                    {label:'View Registration',path:'add_emp'},
+                    // {label:'update Register',path:'view_emp'},
                     {label:'View Defaulters',path:'view_defaulters'}
                  ],
             

@@ -16,7 +16,8 @@ import { AppMenuComponent } from './includes/app-menu/app-menu.component';
 import { RegistrationComponent } from './templates/registration/registration.component';
 import { HomepageComponent } from './templates/homepage/homepage.component';
 import { FooterComponent } from './templates/footer/footer.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {HttpClientModule} from '@angular/common/http'
     AppMenuComponent,
     RegistrationComponent,
     HomepageComponent,
-    FooterComponent
+    FooterComponent,
+   
   ],
   imports: [
     BrowserModule,

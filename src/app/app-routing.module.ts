@@ -26,8 +26,17 @@ const routes: Routes = [
 
       {path:'admin', loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule)},
       {path:'re' ,loadChildren:()=>import('./modules/re/re.module').then(m=>m.ReModule)}
+      // {path:'register/:data' , component:RegistrationComponent},
+      // {path:'register/:data' , component:RegistrationComponent}
+
 
     ]
+  },
+
+  {
+
+    // path:'register',component:RegistrationComponent
+    path:'register/:data',component:RegistrationComponent
   }
 
 ];

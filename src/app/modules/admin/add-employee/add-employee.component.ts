@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { EnquiryForm } from 'src/app/model/enquiry-form';
 import { User } from 'src/app/model/user';
 import { CommonServiceService } from 'src/app/service/common-service.service';
@@ -11,7 +12,7 @@ import { CommonServiceService } from 'src/app/service/common-service.service';
 export class AddEmployeeComponent {
 
 
-  constructor(private s:CommonServiceService){}
+  constructor(private s:CommonServiceService , private router:Router){}
 
 
 
@@ -26,11 +27,23 @@ export class AddEmployeeComponent {
    })
   }
 
-  // updateData(user:User) {
+  
+  editData(userr:User) {
 
-  //   this.s.u
+    // let userjson:string=JSON.stringify(userr);
+    // console.log(userjson)
+    //      this.router.navigateByUrl('view_emp')
+
     
-  //   }
+    // const userjson=JSON.stringify(userr);
+    // console.log(userjson)
+    //      this.router.navigateByUrl('register'+userjson)
+    
+    let userjson:string=JSON.stringify(userr);
+    console.log(userjson)
+         this.router.navigate(['apnafinance/admin/view_emp',userjson])
+
+    }
     
 
 
