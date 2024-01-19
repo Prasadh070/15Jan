@@ -11,6 +11,7 @@ import { CommonServiceService } from 'src/app/service/common-service.service';
 export class ViewStatisticsComponent {
 
 
+
   
   constructor(private s:CommonServiceService){}
 
@@ -32,6 +33,13 @@ export class ViewStatisticsComponent {
    
    
   }
+
+  delete(enquiry: EnquiryForm) {
+
+    this.s.deleteEnquiry(enquiry).subscribe()
+    window.location.reload();
+   
+    }
 
 
 }

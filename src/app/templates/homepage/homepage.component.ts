@@ -39,6 +39,7 @@ export class HomepageComponent implements OnInit{
       console.log(this.EnquiryForm.value)
       console.log(this.EnquiryForm.controls['e_name'].value)
      this.s.saveData(this.EnquiryForm.value).subscribe()
+     window.location.reload();
 
 
 

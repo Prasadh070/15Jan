@@ -70,4 +70,9 @@ export class CommonServiceService {
  {
   return this.http.put('http://localhost:8767/health/update/'+user.id,user);
  }
+
+ deleteEnquiry(enquiry : EnquiryForm)
+ {
+  return this.http.delete('http://localhost:8767/health/deleteEnqiry/'+enquiry.e_id);
+ }
 }

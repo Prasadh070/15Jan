@@ -216,7 +216,7 @@
                 <div class="form-group">
                     <a class="btn btn-primary mx-2" *ngIf="step!=1 && step!=5 " [hidden]="step==5" (click)="previous()" >Previous</a>
                     <button type="submit" class="btn btn-primary mx-2" *ngIf="step!=4"[hidden]="step==5" (click)="next()">Next</button>
-                    <button type="submit" class="btn btn-primary mx-2" *ngIf="step==4" (click)="onSubmit()">Submit</button> 
+                    <button type="submit" class="btn btn-primary mx-2" *ngIf="step==4" (click)="onSubmit()" routerLink="/">Submit</button> 
                 </div>
                     <!-- {{userReg.value|json}} -->
               
